@@ -1,52 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "../App.css";
 import header from "../Assets/page-header-default.jpg";
-import img1 from "../Assets/bdgclub1.png";
-import img2 from "../Assets/bdgclub2.png";
-import bdgthumb from "../Assets/bdgthumb.png";
-import img3 from "../Assets/dragon1.png";
-import img4 from "../Assets/dragon2.png";
-import img5 from "../Assets/demo3.png";
-import img6 from "../Assets/demo4.png";
-import img7 from "../Assets/firewin1.png";
-import img8 from "../Assets/firewin2.png";
-import img9 from "../Assets/firewin21.png";
-import img10 from "../Assets/firewin22.png";
-import img11 from "../Assets/amriclub1.png";
-import img12 from "../Assets/amriclub2.png";
-import img13 from "../Assets/Bettingbook1.png";
-import img14 from "../Assets/Bettingbook2.png";
-import img15 from "../Assets/Assesries1.png";
-import img16 from "../Assets/Assesries2.png";
-import img17 from "../Assets/watch1.png";
-import img18 from "../Assets/watch2.png";
-import img19 from "../Assets/wedding1.png";
-import img20 from "../Assets/wedding2.png";
-import img21 from "../Assets/bet1.png";
-import img22 from "../Assets/bet2.png";
-import img23 from "../Assets/jelwry1.png";
-import img24 from "../Assets/jelwry2.png";
-import img25 from "../Assets/rj1.png";
-import img26 from "../Assets/rj2.png";
-import img27 from "../Assets/rj3.png";
-import img28 from "../Assets/ring1.png";
-import img29 from "../Assets/ring2.png";
-import dragonthumb from "../Assets/dragonthumb.png";
-import fire1thumb from "../Assets/fire1thumb.png";
-import fire2thumb from "../Assets/fire2thumb.png";
-import amrithumb from "../Assets/amrithumb.png";
-import trova1thumb from "../Assets/trova1thumb.png";
-import trova2thumb from "../Assets/trova2thumb.png";
-import trova4thumb from "../Assets/trova4thumb.png";
-import trova5thumb from "../Assets/trova5thumb.png";
-import trova6thumb from "../Assets/trova6thumb.png";
-import trova7thumb from "../Assets/trova7thumb.png";
-import rjthumb from "../Assets/rjthumb.png";
-import Bettingbookthumb from "../Assets/Bettingbookthumb.png";
+import img1 from "../Assets/bdgclub1.webp";
+import img2 from "../Assets/bdgclub2.webp";
+import bdgthumb from "../Assets/bdgthumb.webp";
+import img3 from "../Assets/dragon1.webp";
+import img4 from "../Assets/dragon2.webp";
+// import img5 from "../Assets/demo3.webp";
+// import img6 from "../Assets/demo4.webp";
+import img7 from "../Assets/firewin1.webp";
+import img8 from "../Assets/firewin2.webp";
+import img9 from "../Assets/firewin21.webp";
+import img10 from "../Assets/firewin22.webp";
+import img11 from "../Assets/amriclub1.webp";
+import img12 from "../Assets/amriclub2.webp";
+import img13 from "../Assets/Bettingbook1.webp";
+import img14 from "../Assets/Bettingbook2.webp";
+import img15 from "../Assets/Assesries1.webp";
+import img16 from "../Assets/Assesries2.webp";
+import img17 from "../Assets/watch1.webp";
+import img18 from "../Assets/watch2.webp";
+import img19 from "../Assets/wedding1.webp";
+import img20 from "../Assets/wedding2.webp";
+import img21 from "../Assets/bet1.webp";
+import img22 from "../Assets/bet2.webp";
+import img23 from "../Assets/jelwry1.webp";
+import img24 from "../Assets/jelwry2.webp";
+import img25 from "../Assets/rj1.webp";
+import img26 from "../Assets/rj2.webp";
+import img27 from "../Assets/rj3.webp";
+import img28 from "../Assets/ring1.webp";
+import img29 from "../Assets/ring2.webp";
+import dragonthumb from "../Assets/dragonthumb.webp";
+import fire1thumb from "../Assets/fire1thumb.webp";
+import fire2thumb from "../Assets/fire2thumb.webp";
+import amrithumb from "../Assets/amrithumb.webp";
+import trova1thumb from "../Assets/trova1thumb.webp";
+import trova2thumb from "../Assets/trova2thumb.webp";
+import trova4thumb from "../Assets/trova4thumb.webp";
+import trova5thumb from "../Assets/trova5thumb.webp";
+import trova6thumb from "../Assets/trova6thumb.webp";
+import trova7thumb from "../Assets/trova7thumb.webp";
+import rjthumb from "../Assets/rjthumb.webp";
+import Bettingbookthumb from "../Assets/Bettingbookthumb.webp";
 import { MdOutlineWhatsapp, MdContentCopy } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { TbCategoryPlus } from "react-icons/tb";
+import { FaSquare } from "react-icons/fa6";
 
 const GamesDevelopment = () => {
   const games = [
@@ -54,6 +56,7 @@ const GamesDevelopment = () => {
       id: 1,
       name: "BDG Win",
       images: [bdgthumb, img1, img2],
+      category: "Hyip",
       demoLogin: {
         url: "http://jetwin.pro/",
         user: "1234567890",
@@ -69,6 +72,7 @@ const GamesDevelopment = () => {
       id: 2,
       name: "DRAGON CLUBS",
       images: [dragonthumb, img3, img4],
+      category: "Hyip",
       demoLogin: {
         url: "https://Vip91trade.com",
         user: "0987654321",
@@ -80,25 +84,11 @@ const GamesDevelopment = () => {
         password: "123456",
       },
     },
-    // {
-    //   id: 3,
-    //   name: "Tc or Daman game website",
-    //   images: [img5, img6],
-    //   demoLogin: {
-    //     url: "https://kerlagames.in/home",
-    //     user: "1234567890",
-    //     password: "123456",
-    //   },
-    //   adminLogin: {
-    //     url: "https://kerlagames.in/home",
-    //     user: "1234567890",
-    //     password: "123456",
-    //   },
-    // },
     {
       id: 4,
       name: "Fire Win 1",
       images: [fire1thumb, img7, img8],
+      category: "Hyip",
       demoLogin: {
         url: "https://fiewin.codemax.site/",
         user: "1234567890",
@@ -114,6 +104,7 @@ const GamesDevelopment = () => {
       id: 5,
       name: "Fire Win 2",
       images: [fire2thumb, img9, img10],
+      category: "Hyip",
       demoLogin: {
         url: "https://fiewin2.codemax.site/#/",
         user: "1234567890",
@@ -129,6 +120,7 @@ const GamesDevelopment = () => {
       id: 6,
       name: "Amiri Club",
       images: [amrithumb, img11, img12],
+      category: "MLM",
       demoLogin: {
         url: "https://amiriclub.com/home",
         user: "1234567890",
@@ -144,6 +136,7 @@ const GamesDevelopment = () => {
       id: 7,
       name: "Betting Book",
       images: [Bettingbookthumb, img13, img14],
+      category: "PTC",
       demoLogin: {
         url: "https://battingbook.com",
         user: "1234567890",
@@ -160,6 +153,7 @@ const GamesDevelopment = () => {
       id: 8,
       name: "Trova 2",
       images: [trova2thumb, img15, img16],
+      category: "PTC",
       demoLogin: {
         url: "https://trova2.codemax.site",
         user: "1234567890",
@@ -175,6 +169,7 @@ const GamesDevelopment = () => {
       id: 9,
       name: "Trova 4",
       images: [trova4thumb, img18, img17],
+      category: "PTC",
       demoLogin: {
         url: "https://trova4.codemax.site",
         user: "1234567890",
@@ -190,6 +185,7 @@ const GamesDevelopment = () => {
       id: 10,
       name: "Trova 5",
       images: [trova5thumb, img20, img19],
+      category: "Color-Trade",
       demoLogin: {
         url: "https://trova5.codemax.site",
         user: "1234567890",
@@ -205,6 +201,7 @@ const GamesDevelopment = () => {
       id: 11,
       name: "Trova 6",
       images: [trova6thumb, img21, img22],
+      category: "Color-Trade",
       demoLogin: {
         url: "https://trova6.codemax.site",
         user: "1234567890",
@@ -220,6 +217,7 @@ const GamesDevelopment = () => {
       id: 12,
       name: "Trova 7",
       images: [trova7thumb, img23, img24],
+      category: "Color-Trade",
       demoLogin: {
         url: "https://trova7.codemax.site",
         user: "1234567890",
@@ -235,28 +233,30 @@ const GamesDevelopment = () => {
       id: 13,
       name: "E-Commerce Store",
       images: [rjthumb, img25, img26, img27],
+      category: "Color-Trade",
       demoLogin: {
         url: "https://ecommerce.themaxify.co/",
         user: "rjsurya@gmail.com",
         password: "rjsurya",
       },
       adminLogin: {
-        url: "https://dashboard.themaxify.co/register",
+        url: "https://ecommerce.themaxify.co/",
         user: "rjsurya@gmail.com",
         password: "rjsurya",
       },
     },
     {
       id: 14,
-      name: "Trova 1",
+      name: "Ring Win",
       images: [trova1thumb, img28, img29],
+      category: "MLM",
       demoLogin: {
-        url: "https://trova1.codemax.site",
+        url: "https://ringwin.codemax.site",
         user: "1234567890",
         password: "12345",
       },
       adminLogin: {
-        url: "https://trova1.codemax.site",
+        url: "https://ringwin.codemax.site",
         user: "1234567890",
         password: "12345",
       },
@@ -281,6 +281,14 @@ const GamesDevelopment = () => {
       </ul>
     ), // Add this line
   };
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const filteredGames = selectedCategory === "All" ? games : games.filter((game) => game.category === selectedCategory);
+
+  const [showButtons, setShowButtons] = useState(false);
+
+  const toggleButtons = () => {
+    setShowButtons(!showButtons);
+  };
 
   return (
     <div className="background-rays">
@@ -304,11 +312,25 @@ const GamesDevelopment = () => {
 
       {/* Game Cards */}
       <div className="h-auto bg-gray-100 py-10">
-        <h1 className="text-3xl text-[#276678] font-bold text-center mb-10 underline">
+        <h1 className="text-3xl  font-bold text-center mb-10 underline">
           Game Demos
         </h1>
+        <div className=" py-3 sm:px-5 md:px-16">
+      <button onClick={toggleButtons} className="toggle-button flex gap-2 items-center py-1">
+      <TbCategoryPlus size={22} className="text-[#276678]" />Show Categories
+      </button>
+      {showButtons && (
+        <div className="category-buttons flex flex-col gap-2 mt- items-start w-[200px]">
+          <button className="category-button flex items-center bg-[#276688] w-full py-1 px-2 rounded-sm text-white gap-1" onClick={() => setSelectedCategory("All")}><FaSquare size={8} />All</button>
+          <button className="category-button flex items-center bg-[#134662] w-full py-1 px-2 rounded-sm text-white gap-1" onClick={() => setSelectedCategory("MLM")}><FaSquare size={8} />MLM</button>
+          <button className="category-button flex items-center bg-[#276688] w-full py-1 px-2 rounded-sm text-white gap-1" onClick={() => setSelectedCategory("Hyip")}><FaSquare size={8} />Hyip</button>
+          <button className="category-button flex items-center bg-[#134662] w-full py-1 px-2 rounded-sm text-white gap-1" onClick={() => setSelectedCategory("PTC")}><FaSquare size={8}/>PTC</button>
+          <button className="category-button flex items-center bg-[#276688] w-full py-1 px-2 rounded-sm text-white gap-1" onClick={() => setSelectedCategory("Color-Trade")}><FaSquare size={8}  />Color Trade</button>
+        </div>
+      )}
+    </div>
         <div className="flex flex-wrap justify-center sm:p-0 md:p-8">
-          {games.map((game, index) => (
+          {filteredGames.map((game, index) => (
             <div
               key={game.id}
               className="w-full md:w-1/2 lg:w-1/3 p-4 game-card-container"
@@ -319,7 +341,7 @@ const GamesDevelopment = () => {
                     ? "bg-white"
                     : "bg-gradient-to-b from-white to-[#1688a793]"
                 }`}
-                style={{ marginTop: "-10px", marginBottom: "20px" }}
+                style={{ marginTop: "10px", marginBottom: "20px" }}
               >
                 <div className="relative top-[-40px] pb-10">
                   {" "}
@@ -329,9 +351,9 @@ const GamesDevelopment = () => {
                       {game.images.map((image, imgIndex) => (
                         <div
                           key={imgIndex}
-                          className="relative h-[250px] overflow-hidden border border-[#276678] game-card-face game-card-front rounded-lg"
+                          className="relative sm:h-[250px] md:h-[250px] overflow-hidden border border-[#276678] game-card-face game-card-front rounded-lg"
                         >
-                          <div className="w-full h-[30px] bg-[#276778] absolute text-center leading-[30px] text-white">
+                          <div className="w-full h-[30px] bg-[#276778] static top- text-center leading-[30px] text-white">
                             {game.name}
                           </div>
                           <img
